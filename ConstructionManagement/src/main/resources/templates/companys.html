@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>ConstructWare</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(companys)}">
+        <h2>Company List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Company Name</th>
+                <th>Owner</th>
+                <th>Company Address</th>
+                <th>Company Projects</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="company : ${companys}">
+                <td th:text="${company.id}"><a href="/company/${company.id}">Id</a></td>
+                <td th:text="${company.companyname}">Company Name</td>
+                <td th:text="${company.owner}">Company Owner</td>
+                <td th:text="${company.address}">Company Address</td>
+                <td th:text="${company.projects}">Company Projects</td>
+                <td><a th:href="${'/company/' + company.id}">View</a></td>
+                <td><a th:href="${'/company/edit/' + company.id}">Edit</a></td>
+                <td><a th:href="${'/company/delete/' + company.id}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

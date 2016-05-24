@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>ConstructWare</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2>Company Details</h2>
+        <div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Company Id:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${company.id}">Company Id</p></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Company Name:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${company.companyname}">Company Name</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Company Owner:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${company.owner}">Company Owner</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Company Address:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${company.address}">Company Address</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Company Projects:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${company.projects}">Company Projects</p>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+
+</body>
+</html>

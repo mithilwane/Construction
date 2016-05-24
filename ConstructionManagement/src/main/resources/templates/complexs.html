@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>ConstructWare</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(complexs)}">
+        <h2>Complex List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Complex Name</th>
+                <th>Address</th>
+                <th>Area of Complex</th>
+                <th>Number of Buildings</th>
+                <th>Company Name</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="complex : ${complexs}">
+                <td th:text="${complex.id}"><a href="/complex/${complex.id}">Id</a></td>
+                <td th:text="${complex.complexname}">Complex Name</td>
+                <td th:text="${complex.complexaddress}">Complex Address</td>
+                <td th:text="${complex.areaofcomplex}">Area of Complex</td>
+                <td th:text="${complex.numberofbuildings}">Number of Buildings</td>
+                <td th:text="${complex.companydetails.companyname}">Company Name</td>
+                <td><a th:href="${'/complex/' + complex.id}">View</a></td>
+                <td><a th:href="${'/complex/edit/' + complex.id}">Edit</a></td>
+                <td><a th:href="${'/complex/delete/' + complex.id}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

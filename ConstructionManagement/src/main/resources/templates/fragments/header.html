@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+</head>
+<body>
+	<div class="container">
+		<div th:fragment="header">
+			<div class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#cons-navbar">
+							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand">ConstructWare</a>
+					</div>
+
+					<div class="collapse navbar-collapse" id="cons-navbar">
+						<ul class="nav navbar-nav">
+							<li><a href="#" th:href="@{/}">Home</a></li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown"> Company <b class="caret"></b>
+							</a>
+								<ul class="dropdown-menu">
+									<li><a href="#" th:href="@{/companys}">View Companies</a></li>
+									<li><a href="#" th:href="@{/company/new}">Create
+											Company</a></li>
+								</ul></li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown"> Complex <b class="caret"></b>
+							</a>
+								<ul class="dropdown-menu">
+									<li><a href="#" th:href="@{/complexs}">View Complex's</a></li>
+									<li><a href="#" th:href="@{/complex/new}">Create
+											Complex</a></li>
+								</ul></li>
+						</ul>
+					</div>
+				</div>
+				<div class="jumbotron">
+					<div class="row text-center">
+						<h2>ConstructWare</h2>
+					</div>
+					<div class="row text-center">
+						<img src="../../static/images/Banner3.jpg" width="600"
+							th:src="@{/images/Banner3.jpg}" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
